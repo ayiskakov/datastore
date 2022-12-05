@@ -44,6 +44,6 @@ err := db.InTransaction(context.TODO(), func(ctx context.Context, txStore storag
 }, pgx.TxOptions{})
 if err != nil {
     panic(err)
-}
+}, pgx.TxOptions{})
 ```
 When you are done with the data store, be sure to call the Close method to close the underlying database connections.
