@@ -7,7 +7,7 @@ This package provides a simple data store that supports CRUD operations for a us
 Usage
 
 To create a new data store, call the NewConnectedPostgresDB function with a valid database URL. This will create a new connection pool and connect to the database using the provided URL.
-```
+```go
 db, err := storage.NewConnectedPostgresDB("putYourURLHere")
 if err != nil {
     panic(err)
@@ -15,7 +15,7 @@ if err != nil {
 ```
 The data store provides methods for working with users and products. To create a new user, call the User method to get a user repository and use the Create method to create a new user.
 
-```
+```go
 user := storage.User{
     Name: "John Doe",
 }
@@ -26,7 +26,7 @@ if err != nil {
 ```
 The data store also provides a InTransaction method that allows you to run a function in the context of a transaction. If the function returns an error, the transaction is rolled back. Otherwise, the transaction is committed.
 
-```
+```go
 err := db.InTransaction(context.TODO(), func(ctx context.Context, txStore storage.DataStore) error {
     user, err := txStore.User().One(ctx, storage.UserFilter{IDs: []uint64{1}})
     if err != nil {
