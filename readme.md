@@ -1,6 +1,6 @@
 # Data Store
 
-Basing on [gist of RA9dev][https://gist.github.com/ra9dev/1ae6fba7382aaa23f42e34c2a0164f9d] I've created a simple data store for my projects using v5/pgxpool
+Basing on [gist of RA9dev](https://gist.github.com/ra9dev/1ae6fba7382aaa23f42e34c2a0164f9d) I've created a simple data store for my projects using v5/pgxpool
 
 This package provides a simple data store that supports CRUD operations for a user and product. It uses a database connection pool to manage the connections to the database and provides transaction management using pgx.TxOptions.
 
